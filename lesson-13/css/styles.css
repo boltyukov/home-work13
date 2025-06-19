@@ -1,0 +1,379 @@
+@import url('reset.css');
+
+/* .eot / .ttf / .otf / .woff / .woff2 */
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/roboto/Roboto-Medium.woff2') format('woff2'),
+		url('../fonts/roboto/Roboto-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/roboto/Roboto-Bold.woff2') format('woff2'),
+		url('../fonts/roboto/Roboto-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/roboto/Roboto-Regular.woff2') format('woff2'),
+		url('../fonts/roboto/Roboto-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Sevillana';
+	src: url('../fonts//sevillana/Sevillana-Regular.woff2') format('woff2'),
+		url('../fonts//sevillana/Sevillana-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+
+body {
+	font-family: "Roboto";
+	font-weight: 400;
+}
+
+.hidden {
+	position: absolute;
+	z-index: -1;
+	width: 0;
+	height: 0;
+	opacity: 0;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.header {
+	padding: 20px 0;
+	background: #000;
+}
+
+.header-menu {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+}
+
+.header-menu>li {
+	background: orange;
+	position: relative;
+}
+
+.header-menu>li a {
+	display: block;
+	color: #220433;
+	padding: 10px 30px;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.header-second-menu {
+	position: absolute;
+	left: 50%;
+	margin-left: -120px;
+	top: -1000%;
+	padding: 20px 0 0;
+	/* display: none; */
+	/* opacity: 0; */
+	background: red;
+	white-space: nowrap;
+	width: 240px;
+	transition: all .5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.header-second-menu a {
+	background: rebeccapurple;
+}
+
+.header-menu>li:hover .header-second-menu {
+	/* display: block; */
+	/* opacity: 1; */
+	top: 100%;
+}
+
+.header-second-menu li {
+	position: relative;
+}
+
+.header-second-menu li:hover ul {
+	display: block;
+}
+
+
+.header-second-menu ul {
+	position: absolute;
+	right: 100%;
+	top: 0;
+	white-space: nowrap;
+	display: none;
+}
+
+.header-second-menu ul>li a {
+	background: blue;
+}
+
+/* TRANSFORM */
+.box {
+	margin-top: 40px;
+	width: 600px;
+	padding: 10px;
+	border: 4px solid violet;
+	/* overflow: hidden; */
+}
+
+.box div {
+	width: 100px;
+	height: 100px;
+	background: #000;
+	margin: 4px 0;
+	transition: all .5s linear;
+}
+
+.box:hover div {
+	transform: rotate(5turn);
+	/* scale: 1.6;
+	translate: -100px; */
+	/* height: 50px; */
+}
+
+.img {
+	border: 5px solid #000;
+	width: 200px;
+	height: 200px;
+	margin: 60px 0 0;
+	overflow: hidden;
+	transform: rotate(-45deg);
+}
+
+.img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transform: rotate(45deg) scale(1.4);
+	transition: all .5s linear;
+}
+
+.img:hover img {
+	transform: rotate(45deg) scale(1.5);
+}
+
+/* transform */
+/* transform: matrix(1,0,0,1,0,0) */
+/* transform: scaleX(1), slewY(0),slewx(0), scaleY(1), translateX(0), translateY(0)  */
+
+
+
+.header .container {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* BURGER */
+.header-burger {
+	width: 50px;
+	height: 33px;
+	/* background: white; */
+	cursor: pointer;
+	position: relative;
+}
+
+.header-burger::before,
+.header-burger span,
+.header-burger::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background: red;
+	transition: all .4s linear;
+}
+
+.header-burger::after {
+	top: auto;
+	bottom: 0;
+}
+
+.header-burger span {
+	top: 50%;
+	transform: translateY(-50%);
+	/* margin-top: -2px; */
+}
+
+.header-burger:hover span {
+	transform: translateY(-50%) scale(0);
+}
+
+.header-burger:hover::before {
+	transform: rotate(-45deg);
+	top: 15px;
+}
+
+.header-burger:hover::after {
+	transform: rotate(45deg);
+	bottom: 15px;
+}
+
+
+
+.center {
+	width: 650px;
+	height: 150px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	background: #220433;
+	transform: translate(-50%, -50%);
+}
+
+/* FORMS */
+
+.form {
+	padding: 20px 0;
+}
+
+textarea {
+	width: 600px;
+	height: 150px;
+	resize: none;
+	background: yellow;
+	transition: all .2s linear;
+}
+
+textarea:hover {
+	background: red;
+}
+
+textarea:focus {
+	background: orange;
+}
+
+.checkbox input {
+	position: absolute;
+	z-index: -1;
+	width: 0;
+	height: 0;
+	opacity: 0;
+}
+
+.checkbox label {
+	display: inline-block;
+	padding: 5px 5px 5px 30px;
+	position: relative;
+	cursor: pointer;
+}
+
+.checkbox label::before {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 0;
+	width: 15px;
+	height: 15px;
+	border: 2px solid orange;
+}
+
+.checkbox input:checked+label::before {
+	background: #000;
+}
+
+.checkbox input:checked+label::after {
+	content: '';
+	position: absolute;
+	top: 4px;
+	left: 6px;
+	width: 6px;
+	height: 12px;
+	border-bottom: 2px solid #fff;
+	border-right: 2px solid #fff;
+	transform: rotate(38deg);
+}
+
+/* DISABLED */
+.checkbox input:disabled+label::before {
+	background: #ccc;
+	border-color: #505050;
+}
+
+/* SWITCH */
+.switch {
+	margin-bottom: 20px;
+}
+
+.switch input {
+	position: absolute;
+	z-index: -1;
+	width: 0;
+	height: 0;
+	opacity: 0;
+}
+
+.switch label {
+	display: flex;
+	width: 100px;
+	height: 54px;
+	border: 2px solid #000;
+	border-radius: 100px;
+	position: relative;
+	box-shadow: inset 0 0 6px 0 #000;
+	cursor: pointer;
+}
+
+.switch label::before {
+	content: '';
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	width: 34px;
+	height: 34px;
+	background: #000;
+	border-radius: 50%;
+	transition: all .5s linear;
+}
+
+.switch input:checked+label::before {
+	left: calc(100% - 8px);
+	transform: translateX(-100%);
+}
+
+/* WITTH TEXT */
+.switch label span {
+	color: red;
+	font-size: 26px;
+	font-weight: 700;
+	flex: 1 1 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+/* PSEUDO BTN */
+.pseudo-btn {
+	padding: 10px 20px;
+	display: inline-block;
+	background: #000;
+	color: aliceblue;
+	cursor: pointer;
+}
+
+#pseudoBtn:checked+textarea {
+	width: 0;
+	height: 0;
+	opacity: 0;
+}
